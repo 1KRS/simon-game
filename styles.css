@@ -23,9 +23,12 @@ body {
   margin: auto;
 }
 
+.btn-container {
+    display: inline-block;
+  }
+
 .btn {
   margin: 25px;
-  display: inline-block;
   height: 200px;
   width: 200px;
   border: 10px solid black;
@@ -72,4 +75,24 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+@media (max-width: 1023px) {
+  .btn-container {
+    display: flex;
+  }
+  .btn {
+    flex: 1;
+    margin: 25px auto;
+    display: inline-block;
+    height: 80px;
+  }
+
+  .restart-btn {
+    flex: 1;
+    margin: 25px auto;
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #fef2bf;
+  }
 }
