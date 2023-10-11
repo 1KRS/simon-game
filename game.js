@@ -1,4 +1,3 @@
-$('.restart-btn').hide();
 var buttonColors = ['blue', 'green', 'red', 'yellow'];
 
 var gamePattern = [];
@@ -6,7 +5,7 @@ var userClickedPattern = [];
 
 var level = gamePattern.length;
 
-function επανεκκίνηση () {
+function επανεκκίνηση() {
   $('.restart-btn').addClass('pressed');
   gamePattern = [];
   userClickedPattern = [];
@@ -14,12 +13,18 @@ function επανεκκίνηση () {
 
   setTimeout(function () {
     $('.restart-btn').removeClass('pressed');
-    $('#level-title').text('Πατήστε το διάστημα για έναρξη');
-  }, 250)
+    // $('#level-title').text('Πατήστε το διάστημα για έναρξη');
+  }, 250);
 
   setTimeout(function () {
     $('.restart-btn').hide();
   }, 350);
+
+  if (level === 0) {
+    setTimeout(function () {
+      nextSequence();
+    }, 500);
+  }
 }
 
 function αναλαμπήΠλήκτρου(πλήκτρο) {
